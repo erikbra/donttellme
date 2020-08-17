@@ -19,8 +19,8 @@ namespace donttellme
         private static string GetRemoteIp(HttpContext context)
         {
             return context.Request.Headers["X-Forwarded-For"].FirstOrDefault()?
-                       .Split(":").FirstOrDefault()?
-                       .Split(",").FirstOrDefault()
+                       .Split(",").FirstOrDefault()?
+                       .Split(":").FirstOrDefault()
                    ?? context.Connection.RemoteIpAddress?.ToString();
         }
     }
